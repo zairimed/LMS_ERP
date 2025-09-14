@@ -1,0 +1,271 @@
+redis-queue | 2025-09-07 03:20:21.253 | 1:C 07 Sep 2025 07:20:21.252 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-queue | 2025-09-07 03:20:21.253 | 1:C 07 Sep 2025 07:20:21.252 # Redis version=6.2.19, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-queue | 2025-09-07 03:20:21.253 | 1:C 07 Sep 2025 07:20:21.252 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-queue | 2025-09-07 03:20:21.253 | 1:M 07 Sep 2025 07:20:21.253 * monotonic clock: POSIX clock_gettime
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 * Running mode=standalone, port=6379.
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 # Server initialized
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 * Loading RDB produced by version 6.2.19
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 * RDB age 403 seconds
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 * RDB memory usage when created 0.77 Mb
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 # Done loading RDB, keys loaded: 1, keys expired: 0.
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 * DB loaded from disk: 0.000 seconds
+redis-queue | 2025-09-07 03:20:21.255 | 1:M 07 Sep 2025 07:20:21.254 * Ready to accept connections
+db          | 2025-09-07 03:20:21.311 | 2025-09-07 07:20:21+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.6.23+maria~ubu2204 started.
+redis-cache | 2025-09-07 03:20:21.340 | 1:C 07 Sep 2025 07:20:21.338 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-cache | 2025-09-07 03:20:21.340 | 1:C 07 Sep 2025 07:20:21.338 # Redis version=6.2.19, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-cache | 2025-09-07 03:20:21.340 | 1:C 07 Sep 2025 07:20:21.338 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.338 * monotonic clock: POSIX clock_gettime
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.339 * Running mode=standalone, port=6379.
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.339 # Server initialized
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.340 * Loading RDB produced by version 6.2.19
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.340 * RDB age 403 seconds
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.340 * RDB memory usage when created 0.77 Mb
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.340 # Done loading RDB, keys loaded: 1, keys expired: 0.
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.340 * DB loaded from disk: 0.000 seconds
+redis-cache | 2025-09-07 03:20:21.340 | 1:M 07 Sep 2025 07:20:21.340 * Ready to accept connections
+db          | 2025-09-07 03:20:21.616 | 2025-09-07 07:20:21+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db          | 2025-09-07 03:20:21.622 | 2025-09-07 07:20:21+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.6.23+maria~ubu2204 started.
+db          | 2025-09-07 03:20:21.820 | 2025-09-07 07:20:21+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+db          | 2025-09-07 03:20:21.841 | 2025-09-07  7:20:21 0 [Note] Starting MariaDB 10.6.23-MariaDB-ubu2204 source revision fe8047caf26d20e98ea7f6ec1dce3924e696703f server_uid loF6zuE4JPBbn274wIqBWi+ojHA= as process 1
+db          | 2025-09-07 03:20:21.860 | 2025-09-07  7:20:21 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db          | 2025-09-07 03:20:21.862 | 2025-09-07  7:20:21 0 [Note] InnoDB: Number of pools: 1
+db          | 2025-09-07 03:20:21.862 | 2025-09-07  7:20:21 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db          | 2025-09-07 03:20:21.862 | 2025-09-07  7:20:21 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db          | 2025-09-07 03:20:21.863 | 2025-09-07  7:20:21 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+db          | 2025-09-07 03:20:21.863 | 2025-09-07  7:20:21 0 [Warning] InnoDB: liburing disabled: falling back to innodb_use_native_aio=OFF
+db          | 2025-09-07 03:20:21.866 | 2025-09-07  7:20:21 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+db          | 2025-09-07 03:20:21.867 | 2025-09-07  7:20:21 0 [Note] InnoDB: Completed initialization of buffer pool
+db          | 2025-09-07 03:20:21.909 | 2025-09-07  7:20:21 0 [Note] InnoDB: 128 rollback segments are active.
+db          | 2025-09-07 03:20:21.911 | 2025-09-07  7:20:21 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db          | 2025-09-07 03:20:21.911 | 2025-09-07  7:20:21 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db          | 2025-09-07 03:20:21.912 | 2025-09-07  7:20:21 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db          | 2025-09-07 03:20:21.913 | 2025-09-07  7:20:21 0 [Note] InnoDB: 10.6.23 started; log sequence number 43556; transaction id 14
+db          | 2025-09-07 03:20:21.913 | 2025-09-07  7:20:21 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db          | 2025-09-07 03:20:21.913 | 2025-09-07  7:20:21 0 [Note] Plugin 'FEEDBACK' is disabled.
+db          | 2025-09-07 03:20:21.916 | 2025-09-07  7:20:21 0 [Note] InnoDB: Buffer pool(s) load completed at 250907  7:20:21
+db          | 2025-09-07 03:20:21.918 | 2025-09-07  7:20:21 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db          | 2025-09-07 03:20:21.919 | 2025-09-07  7:20:21 0 [Note] Server socket created on IP: '0.0.0.0'.
+db          | 2025-09-07 03:20:21.919 | 2025-09-07  7:20:21 0 [Note] Server socket created on IP: '::'.
+db          | 2025-09-07 03:20:21.929 | 2025-09-07  7:20:21 0 [Note] mariadbd: ready for connections.
+db          | 2025-09-07 03:20:21.929 | Version: '10.6.23-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+db          | 2025-09-07 03:20:31.395 | 2025-09-07  7:20:31 3 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+socketio    | 2025-09-07 03:20:32.298 | node:events:491
+socketio    | 2025-09-07 03:20:32.298 |       throw er; // Unhandled 'error' event
+socketio    | 2025-09-07 03:20:32.298 |       ^
+socketio    | 2025-09-07 03:20:32.298 | 
+socketio    | 2025-09-07 03:20:32.298 | Error: connect ECONNREFUSED 127.0.0.1:12311
+socketio    | 2025-09-07 03:20:32.298 |     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1487:16)
+socketio    | 2025-09-07 03:20:32.298 | Emitted 'error' event on RedisClient instance at:
+socketio    | 2025-09-07 03:20:32.298 |     at RedisClient.on_error (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:342:14)
+socketio    | 2025-09-07 03:20:32.298 |     at Socket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:223:14)
+socketio    | 2025-09-07 03:20:32.298 |     at Socket.emit (node:events:513:28)
+socketio    | 2025-09-07 03:20:32.298 |     at emitErrorNT (node:internal/streams/destroy:151:8)
+socketio    | 2025-09-07 03:20:32.298 |     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+socketio    | 2025-09-07 03:20:32.298 |     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+socketio    | 2025-09-07 03:20:32.298 |   errno: -111,
+socketio    | 2025-09-07 03:20:32.298 |   code: 'ECONNREFUSED',
+socketio    | 2025-09-07 03:20:32.298 |   syscall: 'connect',
+socketio    | 2025-09-07 03:20:32.298 |   address: '127.0.0.1',
+socketio    | 2025-09-07 03:20:32.298 |   port: 12311
+socketio    | 2025-09-07 03:20:32.298 | }
+socketio    | 2025-09-07 03:20:32.298 | 
+socketio    | 2025-09-07 03:20:32.298 | Node.js v18.13.0
+backend     | 2025-09-07 03:20:33.177 | [2025-09-07 07:20:33 +0000] [1] [INFO] Starting gunicorn 23.0.0
+backend     | 2025-09-07 03:20:33.177 | [2025-09-07 07:20:33 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+backend     | 2025-09-07 03:20:33.177 | [2025-09-07 07:20:33 +0000] [1] [INFO] Using worker: gthread
+backend     | 2025-09-07 03:20:33.182 | [2025-09-07 07:20:33 +0000] [7] [INFO] Booting worker with pid: 7
+backend     | 2025-09-07 03:20:33.240 | [2025-09-07 07:20:33 +0000] [8] [INFO] Booting worker with pid: 8
+db          | 2025-09-07 03:20:41.486 | 2025-09-07  7:20:41 4 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:20:51.555 | 2025-09-07  7:20:51 5 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:21:01.639 | 2025-09-07  7:21:01 6 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:21:11.731 | 2025-09-07  7:21:11 7 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:21:21.813 | 2025-09-07  7:21:21 8 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:21:31.883 | 2025-09-07  7:21:31 9 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:21:41.951 | 2025-09-07  7:21:41 10 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:21:52.025 | 2025-09-07  7:21:52 11 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:22:02.089 | 2025-09-07  7:22:02 12 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:22:12.161 | 2025-09-07  7:22:12 13 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:22:22.237 | 2025-09-07  7:22:22 14 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:22:32.306 | 2025-09-07  7:22:32 15 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+backend     | 2025-09-07 03:22:41.762 | [2025-09-07 07:22:41 +0000] [1] [INFO] Handling signal: term
+backend     | 2025-09-07 03:22:41.763 | [2025-09-07 07:22:41 +0000] [7] [INFO] Worker exiting (pid: 7)
+backend     | 2025-09-07 03:22:41.763 | [2025-09-07 07:22:41 +0000] [8] [INFO] Worker exiting (pid: 8)
+backend     | 2025-09-07 03:22:41.863 | [2025-09-07 07:22:41 +0000] [1] [INFO] Shutting down: Master
+socketio    | 2025-09-07 03:22:42.211 | node:events:491
+socketio    | 2025-09-07 03:22:42.211 |       throw er; // Unhandled 'error' event
+socketio    | 2025-09-07 03:22:42.211 |       ^
+socketio    | 2025-09-07 03:22:42.211 | 
+socketio    | 2025-09-07 03:22:42.211 | Error: connect ECONNREFUSED 127.0.0.1:12311
+socketio    | 2025-09-07 03:22:42.211 |     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1487:16)
+socketio    | 2025-09-07 03:22:42.211 | Emitted 'error' event on RedisClient instance at:
+socketio    | 2025-09-07 03:22:42.211 |     at RedisClient.on_error (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:342:14)
+socketio    | 2025-09-07 03:22:42.211 |     at Socket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:223:14)
+socketio    | 2025-09-07 03:22:42.211 |     at Socket.emit (node:events:513:28)
+socketio    | 2025-09-07 03:22:42.211 |     at emitErrorNT (node:internal/streams/destroy:151:8)
+socketio    | 2025-09-07 03:22:42.211 |     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+socketio    | 2025-09-07 03:22:42.211 |     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+socketio    | 2025-09-07 03:22:42.211 |   errno: -111,
+socketio    | 2025-09-07 03:22:42.211 |   code: 'ECONNREFUSED',
+socketio    | 2025-09-07 03:22:42.211 |   syscall: 'connect',
+socketio    | 2025-09-07 03:22:42.211 |   address: '127.0.0.1',
+socketio    | 2025-09-07 03:22:42.211 |   port: 12311
+socketio    | 2025-09-07 03:22:42.211 | }
+socketio    | 2025-09-07 03:22:42.211 | 
+socketio    | 2025-09-07 03:22:42.211 | Node.js v18.13.0
+db          | 2025-09-07 03:22:42.395 | 2025-09-07  7:22:42 16 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+backend     | 2025-09-07 03:22:43.025 | [2025-09-07 07:22:43 +0000] [1] [INFO] Starting gunicorn 23.0.0
+backend     | 2025-09-07 03:22:43.026 | [2025-09-07 07:22:43 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+backend     | 2025-09-07 03:22:43.026 | [2025-09-07 07:22:43 +0000] [1] [INFO] Using worker: gthread
+backend     | 2025-09-07 03:22:43.030 | [2025-09-07 07:22:43 +0000] [7] [INFO] Booting worker with pid: 7
+backend     | 2025-09-07 03:22:43.082 | [2025-09-07 07:22:43 +0000] [8] [INFO] Booting worker with pid: 8
+db          | 2025-09-07 03:22:52.458 | 2025-09-07  7:22:52 17 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:23:02.530 | 2025-09-07  7:23:02 18 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+redis-queue | 2025-09-07 03:23:03.939 | 1:signal-handler (1757229783) Received SIGTERM scheduling shutdown...
+redis-cache | 2025-09-07 03:23:03.946 | 1:signal-handler (1757229783) Received SIGTERM scheduling shutdown...
+redis-cache | 2025-09-07 03:23:03.971 | 1:M 07 Sep 2025 07:23:03.971 # User requested shutdown...
+redis-cache | 2025-09-07 03:23:03.971 | 1:M 07 Sep 2025 07:23:03.971 * Saving the final RDB snapshot before exiting.
+redis-queue | 2025-09-07 03:23:03.971 | 1:M 07 Sep 2025 07:23:03.971 # User requested shutdown...
+redis-queue | 2025-09-07 03:23:03.971 | 1:M 07 Sep 2025 07:23:03.971 * Saving the final RDB snapshot before exiting.
+db          | 2025-09-07 03:23:03.973 | 2025-09-07  7:23:03 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+db          | 2025-09-07 03:23:03.973 | 2025-09-07  7:23:03 0 [Note] InnoDB: FTS optimize thread exiting.
+redis-cache | 2025-09-07 03:23:03.975 | 1:M 07 Sep 2025 07:23:03.975 * DB saved on disk
+redis-cache | 2025-09-07 03:23:03.976 | 1:M 07 Sep 2025 07:23:03.975 # Redis is now ready to exit, bye bye...
+redis-queue | 2025-09-07 03:23:03.979 | 1:M 07 Sep 2025 07:23:03.978 * DB saved on disk
+redis-queue | 2025-09-07 03:23:03.979 | 1:M 07 Sep 2025 07:23:03.979 # Redis is now ready to exit, bye bye...
+db          | 2025-09-07 03:23:03.987 | 2025-09-07  7:23:03 0 [Note] InnoDB: Starting shutdown...
+db          | 2025-09-07 03:23:03.987 | 2025-09-07  7:23:03 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+db          | 2025-09-07 03:23:03.987 | 2025-09-07  7:23:03 0 [Note] InnoDB: Buffer pool(s) dump completed at 250907  7:23:03
+backend     | 2025-09-07 03:23:03.989 | [2025-09-07 07:23:03 +0000] [1] [INFO] Handling signal: term
+backend     | 2025-09-07 03:23:03.990 | [2025-09-07 07:23:03 +0000] [8] [INFO] Worker exiting (pid: 8)
+backend     | 2025-09-07 03:23:03.991 | [2025-09-07 07:23:03 +0000] [7] [INFO] Worker exiting (pid: 7)
+db          | 2025-09-07 03:23:04.191 | 2025-09-07  7:23:04 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+backend     | 2025-09-07 03:23:04.191 | [2025-09-07 07:23:04 +0000] [1] [INFO] Shutting down: Master
+db          | 2025-09-07 03:23:04.192 | 2025-09-07  7:23:04 0 [Note] InnoDB: Shutdown completed; log sequence number 43568; transaction id 15
+db          | 2025-09-07 03:23:04.198 | 2025-09-07  7:23:04 0 [Note] mariadbd: Shutdown complete
+frontend    | 2025-09-07 03:23:04.868 | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+frontend    | 2025-09-07 03:23:04.868 | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+frontend    | 2025-09-07 03:23:04.870 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/frappe-entrypoint.sh
+frontend    | 2025-09-07 03:23:04.871 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+frontend    | 2025-09-07 03:23:04.883 | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+frontend    | 2025-09-07 03:23:04.900 | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+frontend    | 2025-09-07 03:23:04.901 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+redis-queue | 2025-09-07 03:23:04.913 | 1:C 07 Sep 2025 07:23:04.910 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-queue | 2025-09-07 03:23:04.913 | 1:C 07 Sep 2025 07:23:04.910 # Redis version=6.2.19, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-queue | 2025-09-07 03:23:04.913 | 1:C 07 Sep 2025 07:23:04.910 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.911 * monotonic clock: POSIX clock_gettime
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.911 * Running mode=standalone, port=6379.
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.911 # Server initialized
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.912 * Loading RDB produced by version 6.2.19
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.912 * RDB age 1 seconds
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.912 * RDB memory usage when created 0.77 Mb
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.912 # Done loading RDB, keys loaded: 1, keys expired: 0.
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.912 * DB loaded from disk: 0.000 seconds
+redis-queue | 2025-09-07 03:23:04.913 | 1:M 07 Sep 2025 07:23:04.912 * Ready to accept connections
+redis-cache | 2025-09-07 03:23:04.921 | 1:C 07 Sep 2025 07:23:04.918 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-cache | 2025-09-07 03:23:04.921 | 1:C 07 Sep 2025 07:23:04.918 # Redis version=6.2.19, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-cache | 2025-09-07 03:23:04.921 | 1:C 07 Sep 2025 07:23:04.919 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.919 * monotonic clock: POSIX clock_gettime
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.920 * Running mode=standalone, port=6379.
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.920 # Server initialized
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.921 * Loading RDB produced by version 6.2.19
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.921 * RDB age 1 seconds
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.921 * RDB memory usage when created 0.77 Mb
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.921 # Done loading RDB, keys loaded: 1, keys expired: 0.
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.921 * DB loaded from disk: 0.000 seconds
+redis-cache | 2025-09-07 03:23:04.921 | 1:M 07 Sep 2025 07:23:04.921 * Ready to accept connections
+frontend    | 2025-09-07 03:23:04.924 | 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf
+frontend    | 2025-09-07 03:23:04.932 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+frontend    | 2025-09-07 03:23:04.939 | /docker-entrypoint.sh: Configuration complete; ready for start up
+db          | 2025-09-07 03:23:04.941 | 2025-09-07 07:23:04+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.6.23+maria~ubu2204 started.
+frontend    | 2025-09-07 03:23:04.959 | 2025/09/07 07:23:04 [emerg] 1#1: host not found in upstream "${BACKEND}" in /etc/nginx/conf.d/default.conf:2
+frontend    | 2025-09-07 03:23:04.959 | nginx: [emerg] host not found in upstream "${BACKEND}" in /etc/nginx/conf.d/default.conf:2
+socketio    | 2025-09-07 03:23:05.164 | node:events:491
+socketio    | 2025-09-07 03:23:05.164 |       throw er; // Unhandled 'error' event
+socketio    | 2025-09-07 03:23:05.164 |       ^
+socketio    | 2025-09-07 03:23:05.164 | 
+socketio    | 2025-09-07 03:23:05.164 | Error: connect ECONNREFUSED 127.0.0.1:12311
+socketio    | 2025-09-07 03:23:05.164 |     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1487:16)
+socketio    | 2025-09-07 03:23:05.164 | Emitted 'error' event on RedisClient instance at:
+socketio    | 2025-09-07 03:23:05.164 |     at RedisClient.on_error (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:342:14)
+socketio    | 2025-09-07 03:23:05.164 |     at Socket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:223:14)
+socketio    | 2025-09-07 03:23:05.164 |     at Socket.emit (node:events:513:28)
+socketio    | 2025-09-07 03:23:05.164 |     at emitErrorNT (node:internal/streams/destroy:151:8)
+socketio    | 2025-09-07 03:23:05.164 |     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+socketio    | 2025-09-07 03:23:05.165 |     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+socketio    | 2025-09-07 03:23:05.165 |   errno: -111,
+socketio    | 2025-09-07 03:23:05.165 |   code: 'ECONNREFUSED',
+socketio    | 2025-09-07 03:23:05.165 |   syscall: 'connect',
+socketio    | 2025-09-07 03:23:05.165 |   address: '127.0.0.1',
+socketio    | 2025-09-07 03:23:05.165 |   port: 12311
+socketio    | 2025-09-07 03:23:05.165 | }
+socketio    | 2025-09-07 03:23:05.165 | 
+socketio    | 2025-09-07 03:23:05.165 | Node.js v18.13.0
+db          | 2025-09-07 03:23:05.261 | 2025-09-07 07:23:05+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db          | 2025-09-07 03:23:05.275 | 2025-09-07 07:23:05+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.6.23+maria~ubu2204 started.
+db          | 2025-09-07 03:23:05.637 | 2025-09-07 07:23:05+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+db          | 2025-09-07 03:23:05.657 | 2025-09-07  7:23:05 0 [Note] Starting MariaDB 10.6.23-MariaDB-ubu2204 source revision fe8047caf26d20e98ea7f6ec1dce3924e696703f server_uid 8O34aMNTeQgNSBYWHOeSurNZ+h8= as process 1
+db          | 2025-09-07 03:23:05.676 | 2025-09-07  7:23:05 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db          | 2025-09-07 03:23:05.678 | 2025-09-07  7:23:05 0 [Note] InnoDB: Number of pools: 1
+db          | 2025-09-07 03:23:05.679 | 2025-09-07  7:23:05 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db          | 2025-09-07 03:23:05.679 | 2025-09-07  7:23:05 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+db          | 2025-09-07 03:23:05.679 | 2025-09-07  7:23:05 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+db          | 2025-09-07 03:23:05.679 | 2025-09-07  7:23:05 0 [Warning] InnoDB: liburing disabled: falling back to innodb_use_native_aio=OFF
+db          | 2025-09-07 03:23:05.681 | 2025-09-07  7:23:05 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+db          | 2025-09-07 03:23:05.681 | 2025-09-07  7:23:05 0 [Note] InnoDB: Completed initialization of buffer pool
+db          | 2025-09-07 03:23:05.715 | 2025-09-07  7:23:05 0 [Note] InnoDB: 128 rollback segments are active.
+db          | 2025-09-07 03:23:05.716 | 2025-09-07  7:23:05 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db          | 2025-09-07 03:23:05.716 | 2025-09-07  7:23:05 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db          | 2025-09-07 03:23:05.716 | 2025-09-07  7:23:05 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db          | 2025-09-07 03:23:05.718 | 2025-09-07  7:23:05 0 [Note] InnoDB: 10.6.23 started; log sequence number 43568; transaction id 14
+db          | 2025-09-07 03:23:05.718 | 2025-09-07  7:23:05 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db          | 2025-09-07 03:23:05.718 | 2025-09-07  7:23:05 0 [Note] Plugin 'FEEDBACK' is disabled.
+db          | 2025-09-07 03:23:05.720 | 2025-09-07  7:23:05 0 [Note] InnoDB: Buffer pool(s) load completed at 250907  7:23:05
+db          | 2025-09-07 03:23:05.723 | 2025-09-07  7:23:05 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db          | 2025-09-07 03:23:05.724 | 2025-09-07  7:23:05 0 [Note] Server socket created on IP: '0.0.0.0'.
+db          | 2025-09-07 03:23:05.724 | 2025-09-07  7:23:05 0 [Note] Server socket created on IP: '::'.
+db          | 2025-09-07 03:23:05.729 | 2025-09-07  7:23:05 0 [Note] mariadbd: ready for connections.
+db          | 2025-09-07 03:23:05.729 | Version: '10.6.23-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+backend     | 2025-09-07 03:23:05.973 | [2025-09-07 07:23:05 +0000] [1] [INFO] Starting gunicorn 23.0.0
+backend     | 2025-09-07 03:23:05.973 | [2025-09-07 07:23:05 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+backend     | 2025-09-07 03:23:05.973 | [2025-09-07 07:23:05 +0000] [1] [INFO] Using worker: gthread
+backend     | 2025-09-07 03:23:05.977 | [2025-09-07 07:23:05 +0000] [7] [INFO] Booting worker with pid: 7
+backend     | 2025-09-07 03:23:06.034 | [2025-09-07 07:23:06 +0000] [8] [INFO] Booting worker with pid: 8
+db          | 2025-09-07 03:23:15.008 | 2025-09-07  7:23:15 3 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:23:25.053 | 2025-09-07  7:23:25 4 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+socketio    | 2025-09-07 03:23:26.829 | node:events:491
+socketio    | 2025-09-07 03:23:26.829 |       throw er; // Unhandled 'error' event
+socketio    | 2025-09-07 03:23:26.829 |       ^
+socketio    | 2025-09-07 03:23:26.829 | 
+socketio    | 2025-09-07 03:23:26.829 | Error: connect ECONNREFUSED 127.0.0.1:12311
+socketio    | 2025-09-07 03:23:26.829 |     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1487:16)
+socketio    | 2025-09-07 03:23:26.829 | Emitted 'error' event on RedisClient instance at:
+socketio    | 2025-09-07 03:23:26.829 |     at RedisClient.on_error (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:342:14)
+socketio    | 2025-09-07 03:23:26.829 |     at Socket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/redis/index.js:223:14)
+socketio    | 2025-09-07 03:23:26.829 |     at Socket.emit (node:events:513:28)
+socketio    | 2025-09-07 03:23:26.829 |     at emitErrorNT (node:internal/streams/destroy:151:8)
+socketio    | 2025-09-07 03:23:26.829 |     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+socketio    | 2025-09-07 03:23:26.829 |     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+socketio    | 2025-09-07 03:23:26.829 |   errno: -111,
+socketio    | 2025-09-07 03:23:26.829 |   code: 'ECONNREFUSED',
+socketio    | 2025-09-07 03:23:26.829 |   syscall: 'connect',
+socketio    | 2025-09-07 03:23:26.829 |   address: '127.0.0.1',
+socketio    | 2025-09-07 03:23:26.829 |   port: 12311
+socketio    | 2025-09-07 03:23:26.829 | }
+socketio    | 2025-09-07 03:23:26.829 | 
+socketio    | 2025-09-07 03:23:26.829 | Node.js v18.13.0
+frontend    | 2025-09-07 03:23:29.676 | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+frontend    | 2025-09-07 03:23:29.676 | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+frontend    | 2025-09-07 03:23:29.677 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/frappe-entrypoint.sh
+frontend    | 2025-09-07 03:23:29.678 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+frontend    | 2025-09-07 03:23:29.681 | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+frontend    | 2025-09-07 03:23:29.692 | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+frontend    | 2025-09-07 03:23:29.692 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+frontend    | 2025-09-07 03:23:29.696 | 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf
+frontend    | 2025-09-07 03:23:29.698 | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+frontend    | 2025-09-07 03:23:29.699 | /docker-entrypoint.sh: Configuration complete; ready for start up
+frontend    | 2025-09-07 03:23:29.707 | 2025/09/07 07:23:29 [emerg] 1#1: host not found in upstream "${BACKEND}" in /etc/nginx/conf.d/default.conf:2
+frontend    | 2025-09-07 03:23:29.707 | nginx: [emerg] host not found in upstream "${BACKEND}" in /etc/nginx/conf.d/default.conf:2
+db          | 2025-09-07 03:23:35.131 | 2025-09-07  7:23:35 5 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:23:45.208 | 2025-09-07  7:23:45 6 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:23:55.289 | 2025-09-07  7:23:55 7 [Warning] Access denied for user 'root'@'localhost' (using password: NO)
+db          | 2025-09-07 03:24:05.374 | 2025-09-07  7:24:05 8 [Warning] Access denied for user 'root'@'localhost' (using password: NO)

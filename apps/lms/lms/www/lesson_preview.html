@@ -1,0 +1,237 @@
+<!-- Copyright (c) 2025, Your Company Name. All rights reserved. -->
+<!-- For license information, please see license.txt -->
+
+{% extends "templates/web.html" %}
+
+{% block title %}{{ lesson.title }} - {{ bootcamp.title }}{% endblock %}
+
+{% block header %}
+<div class="header-container">
+    <h1>{{ lesson.title }}</h1>
+    <div class="breadcrumb">
+        <a href="/free-preview">{{ _("Free Preview") }}</a> > 
+        <a href="/bootcamp/{{ bootcamp.name }}">{{ bootcamp.title }}</a> > 
+        <a href="#">{{ course.title }}</a> > 
+        <span>{{ lesson.title }}</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_content %}
+<div class="lesson-preview-container">
+    <div class="lesson-header">
+        <h2>{{ lesson.title }}</h2>
+        <div class="lesson-meta">
+            <span class="course-name">{{ course.title }}</span>
+            <span class="bootcamp-name">{{ bootcamp.title }}</span>
+        </div>
+    </div>
+    
+    {% if lesson.description %}
+    <div class="lesson-description">
+        {{ lesson.description }}
+    </div>
+    {% endif %}
+    
+    <div class="lesson-content">
+        {% if lesson.content_type == "Text" %}
+            <div class="text-content">
+                {{ lesson.content }}
+            </div>
+        {% elif lesson.content_type == "Video" %}
+            <div class="video-content">
+                {% if lesson.video_url %}
+                <iframe src="{{ lesson.video_url }}" 
+                        frameborder="0" 
+                        allowfullscreen
+                        style="width: 100%; height: 400px;">
+                </iframe>
+                {% else %}
+                <p>{{ _("No video URL provided for this lesson.") }}</p>
+                {% endif %}
+            </div>
+        {% elif lesson.content_type == "Lab" %}
+            <div class="lab-content">
+                <h3>{{ _("Lab Instructions") }}</h3>
+                {{ lesson.content }}
+            </div>
+        {% endif %}
+    </div>
+    
+    {% if other_lessons %}
+    <div class="other-lessons">
+        <h3>{{ _("Other Free Preview Lessons in this Course") }}</h3>
+        <ul class="lessons-list">
+            {% for other_lesson in other_lessons %}
+            <li><a href="/lesson-preview?lesson={{ other_lesson.name }}">{{ other_lesson.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
+    <div class="cta-section">
+        <h3>{{ _("Want Full Access?") }}</h3>
+        <p>{{ _("Sign up now to get access to all lessons in this bootcamp!") }}</p>
+        <a href="/register" class="btn btn-primary">{{ _("Register Now") }}</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+.header-container {
+    margin-bottom: 2rem;
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #95a5a6;
+}
+
+.lesson-preview-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.lesson-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.lesson-header h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.lesson-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.lesson-meta .course-name::after {
+    content: "•";
+    margin-left: 1rem;
+}
+
+.lesson-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.lesson-content {
+    margin-bottom: 2rem;
+}
+
+.text-content, .lab-content {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.lab-content h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.video-content {
+    text-align: center;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-section .btn-primary {
+    background-color: white;
+    color: #667eea;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.cta-section .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.other-lessons {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.other-lessons h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.lessons-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lessons-list li {
+    margin-bottom: 0.5rem;
+}
+
+.lessons-list a {
+    color: #3498db;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.lessons-list a:hover {
+    background-color: #f8f9fa;
+    text-decoration: underline;
+}
+</style>
+{% endblock %}

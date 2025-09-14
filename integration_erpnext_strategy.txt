@@ -1,0 +1,125 @@
+# Stratégie d'intégration avec ERPNext - Projet LMS Multi-École
+
+## État actuel du projet
+
+### Infrastructure Docker fonctionnelle
+- Déploiement ERPNext v15.78.1 opérationnel via docker-compose.yml
+- Tous les services nécessaires en place (backend, db, frontend, redis, workers, etc.)
+- Accès web fonctionnel sur le port 8080
+- Base de données MariaDB 10.6 avec persistance des données
+
+### Application LMS custom
+- Structure de données implémentée (LMS Bootcamp, Course, Lesson)
+- Fonctionnalité "Free Preview" opérationnelle
+- Interface publique pour les visiteurs fonctionnelle
+- Stories 1.1 à 2.1 complètement implémentées
+
+## Architecture d'intégration prévue
+
+### 1. Installation de l'application LMS dans le bench ERPNext
+L'application custom sera installée dans l'environnement Frappe/ERPNext via :
+```bash
+# Dans le conteneur backend
+bench get-app /home/frappe/frappe-bench/apps/lms
+bench install-app lms
+bench migrate
+```
+
+### 2. Création de sites d'école spécifiques
+Chaque école aura son propre site ERPNext isolé :
+```bash
+bench new-site tech-school.local --install-app erpnext --install-app lms
+bench new-site cooking-school.local --install-app erpnext --install-app lms
+```
+
+### 3. Configuration des permissions et rôles
+- Rôles : Administrator, Student, Influencer
+- Permissions contrôlées via le système standard de Frappe
+- Isolation des données par site (multi-tenant)
+
+## Points d'intégration techniques
+
+### 1. DocTypes et base de données
+- Les DocTypes LMS sont stockés dans la base MariaDB de chaque site
+- Lien automatique avec les Items ERPNext pour la vente
+- Schéma de données conforme à l'architecture définie
+
+### 2. APIs REST
+- Frappe expose automatiquement des endpoints REST pour tous les DocTypes
+- Exemples :
+  - GET /api/resource/LMS Bootcamp
+  - POST /api/resource/Enrollment
+  - PUT /api/resource/LMS Lesson/[name]
+
+### 3. Authentification
+- Utilisation du système standard de sessions Frappe
+- Support des tokens API pour les intégrations
+- Gestion des rôles et permissions intégrée
+
+### 4. Processus métier
+- Enrollments liés aux utilisateurs et bootcamps
+- Suivi de progression via des tables de liaison
+- Système d'affiliation avec Sales Partners ERPNext
+
+## Développement des stories restantes
+
+### Ordre de priorité recommandé :
+1. Story 2.2 : Suivi de progression (Enrollment DocType)
+2. Story 2.3 : Accès après achat (intégration avec ventes)
+3. Story 3.1 : Partenaires commerciaux (Sales Partner extension)
+4. Story 3.2 : Codes promo (Pricing Rule integration)
+5. Story 3.3 : Portail affilié (rapports et dashboard)
+
+### Structure des données supplémentaires à créer :
+- Enrollment : Lier User → Bootcamp + suivi progression
+- Enrichissement des Sales Partner pour les Influencers
+- Tables de reporting pour les statistiques d'affiliation
+
+## Plan d'intégration technique
+
+### Phase 1 : Installation et validation
+1. Installation de l'app LMS dans le bench
+2. Création d'un site de test
+3. Validation des DocTypes et permissions
+
+### Phase 2 : Tests d'API
+1. Test des endpoints REST pour les LMS DocTypes
+2. Validation de l'authentification
+3. Test des processus de création/modification
+
+### Phase 3 : Intégration complète
+1. Configuration des workflows métier
+2. Mise en place des permissions multi-rôles
+3. Validation de l'isolation des données multi-site
+
+## Avantages de l'approche actuelle
+
+### Développement indépendant
+- Possibilité de continuer à développer les stories sans l'environnement ERPNext
+- Code modulaire et testable
+- Séparation claire entre logique LMS et back-office ERP
+
+### Intégration fluide
+- Utilisation des standards Frappe/ERPNext
+- APIs REST automatiques
+- Système de permissions intégré
+- Infrastructure Docker prête à l'emploi
+
+### Scalabilité
+- Architecture multi-site prête pour le déploiement
+- Possibilité de scaling horizontal
+- Isolation des données par école
+
+## Prochaines étapes
+
+### Développement immédiat :
+- Continuer l'implémentation des stories restantes
+- Se concentrer sur la logique métier de l'application LMS
+- Maintenir la structure conforme aux spécifications
+
+### Intégration à venir :
+- Installation de l'app dans l'environnement Docker
+- Tests d'intégration complète
+- Configuration multi-site pour les différentes écoles
+
+Cette stratégie permet de maintenir un développement agile tout en assurant une intégration fluide avec l'infrastructure ERPNext existante.

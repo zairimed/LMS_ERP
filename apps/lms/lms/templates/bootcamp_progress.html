@@ -1,0 +1,374 @@
+<!-- Copyright (c) 2025, Your Company Name. All rights reserved. -->
+<!-- For license information, please see license.txt -->
+
+{% extends "templates/web.html" %}
+
+{% block title %}{{ bootcamp.title }}{% endblock %}
+
+{% block header %}
+<div class="container">
+    <h1>{{ bootcamp.title }}</h1>
+    <div class="progress-container">
+        <div class="progress-header">
+            <div class="progress-text">Progress: {{ progress }}% ({{ completed_lessons }}/{{ total_lessons }} lessons completed)</div>
+            <div class="motivational-message">
+                {% if progress == 0 %}
+                    Welcome! Start your learning journey now.
+                {% elif progress < 25 %}
+                    Great start! Keep going.
+                {% elif progress < 50 %}
+                    You're making good progress!
+                {% elif progress < 75 %}
+                    Excellent work! You're getting there.
+                {% elif progress < 100 %}
+                    Almost there! Finish strong.
+                {% else %}
+                    Congratulations! You've completed this bootcamp!
+                {% endif %}
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{ progress }}%" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress-label">{{ progress }}%</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Course content will be displayed here -->
+            {% if courses %}
+                {% for course in courses %}
+                <div class="course-section">
+                    <h2>{{ course.title }}</h2>
+                    {% if course.description %}
+                    <p>{{ course.description }}</p>
+                    {% endif %}
+                    
+                    {% if course.lessons %}
+                    <div class="lessons-list">
+                        {% for lesson in course.lessons %}
+                        <div class="lesson-item {% if lesson.is_completed %}completed{% endif %}" 
+                             data-lesson-type="{{ lesson.content_type }}">
+                            <div class="lesson-info">
+                                <h3>
+                                    {% if lesson.is_completed %}
+                                    <span class="completion-icon" aria-label="Completed">✓</span>
+                                    {% endif %}
+                                    {{ lesson.title }}
+                                </h3>
+                                <div class="lesson-meta">
+                                    <span class="content-type">{{ lesson.content_type }}</span>
+                                    {% if lesson.is_free_preview or lesson.is_enrolled %}
+                                    <a href="/lesson/{{ lesson.name }}" class="btn btn-primary btn-sm">View Lesson</a>
+                                    {% elif lesson.is_free_preview %}
+                                    <a href="/lesson-preview?lesson={{ lesson.name }}" class="btn btn-outline-primary btn-sm">Preview</a>
+                                    {% else %}
+                                    <span class="locked">Locked</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <div class="sidebar">
+                <div class="progress-summary">
+                    <h3>Your Progress</h3>
+                    <div class="progress-text">Overall: {{ progress }}%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{ progress }}%" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Completed:</span>
+                            <span class="stat-value">{{ completed_lessons }}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Lessons:</span>
+                            <span class="stat-value">{{ total_lessons }}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Remaining:</span>
+                            <span class="stat-value">{{ remaining_lessons }}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if next_lesson %}
+                <div class="next-lesson">
+                    <h3>Continue Learning</h3>
+                    <div class="lesson-info">
+                        <h4>{{ next_lesson.title }}</h4>
+                        <p>{{ next_lesson.description }}</p>
+                        <a href="/lesson/{{ next_lesson.name }}" class="btn btn-primary">Continue</a>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <div class="achievements">
+                    <h3>Achievements</h3>
+                    <div class="achievement-badge {% if progress >= 25 %}unlocked{% endif %}">
+                        <span class="badge-icon">★</span>
+                        <span class="badge-name">Quarter Way</span>
+                        {% if progress >= 25 %}<span class="badge-status">Unlocked</span>{% endif %}
+                    </div>
+                    <div class="achievement-badge {% if progress >= 50 %}unlocked{% endif %}">
+                        <span class="badge-icon">★</span>
+                        <span class="badge-name">Half Way</span>
+                        {% if progress >= 50 %}<span class="badge-status">Unlocked</span>{% endif %}
+                    </div>
+                    <div class="achievement-badge {% if progress >= 75 %}unlocked{% endif %}">
+                        <span class="badge-icon">★</span>
+                        <span class="badge-name">Three Quarters</span>
+                        {% if progress >= 75 %}<span class="badge-status">Unlocked</span>{% endif %}
+                    </div>
+                    <div class="achievement-badge {% if progress >= 100 %}unlocked{% endif %}">
+                        <span class="badge-icon">★</span>
+                        <span class="badge-name">Completion</span>
+                        {% if progress >= 100 %}<span class="badge-status">Unlocked</span>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+.progress-container {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.progress-text {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.motivational-message {
+    font-style: italic;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-label {
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.course-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.course-section:last-child {
+    border-bottom: none;
+}
+
+.lesson-item {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.lesson-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lesson-item.completed {
+    background-color: #f8fff8;
+    border-color: #28a745;
+}
+
+.completion-icon {
+    color: #28a745;
+    margin-right: 0.5rem;
+}
+
+.lesson-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.content-type {
+    background-color: #e9ecef;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.locked {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.sidebar {
+    position: sticky;
+    top: 2rem;
+}
+
+.progress-summary {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.stats {
+    margin-top: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-weight: 500;
+}
+
+.next-lesson {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.next-lesson .btn {
+    margin-top: 1rem;
+}
+
+.achievements {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.achievements h3 {
+    margin-top: 0;
+}
+
+.achievement-badge {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    opacity: 0.6;
+}
+
+.achievement-badge.unlocked {
+    background-color: #e8f4f8;
+    opacity: 1;
+}
+
+.badge-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    color: #ccc;
+}
+
+.achievement-badge.unlocked .badge-icon {
+    color: #3498db;
+}
+
+.badge-name {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.badge-status {
+    font-size: 0.8rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .motivational-message {
+        margin-top: 0.5rem;
+    }
+    
+    .sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+/* Accessibility improvements */
+.progress-bar {
+    border: 1px solid #ccc;
+}
+
+.progress-fill {
+    min-width: 2em;
+}
+
+.lesson-item:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+</style>
+{% endblock %}

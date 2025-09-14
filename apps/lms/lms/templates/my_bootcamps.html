@@ -1,0 +1,157 @@
+<!-- Copyright (c) 2025, Your Company Name. All rights reserved. -->
+<!-- For license information, please see license.txt -->
+
+{% extends "templates/web.html" %}
+
+{% block title %}My Bootcamps{% endblock %}
+
+{% block header %}
+<div class="container">
+    <h1>My Bootcamps</h1>
+    <p>Access your enrolled bootcamp content</p>
+</div>
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    {% if bootcamps %}
+        <div class="bootcamps-grid">
+            {% for bootcamp in bootcamps %}
+            <div class="bootcamp-card">
+                <h2>{{ bootcamp.title }}</h2>
+                {% if bootcamp.description %}
+                <p>{{ bootcamp.description }}</p>
+                {% endif %}
+                <div class="bootcamp-stats">
+                    <span class="lesson-count">{{ bootcamp.total_lessons }} lessons</span>
+                    <span class="progress-percent">{{ bootcamp.progress }}% complete</span>
+                </div>
+                <a href="/bootcamp/{{ bootcamp.name }}" class="btn btn-primary">Access Content</a>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Pagination -->
+        {% if total_pages > 1 %}
+        <div class="pagination">
+            <ul class="pagination-list">
+                {% if has_previous %}
+                <li class="page-item">
+                    <a href="?page={{ previous_page }}" class="page-link">Previous</a>
+                </li>
+                {% endif %}
+                
+                {% for i in range(1, total_pages + 1) %}
+                <li class="page-item {% if i == current_page %}active{% endif %}">
+                    <a href="?page={{ i }}" class="page-link">{{ i }}</a>
+                </li>
+                {% endfor %}
+                
+                {% if has_next %}
+                <li class="page-item">
+                    <a href="?page={{ next_page }}" class="page-link">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        {% endif %}
+    {% else %}
+        <div class="no-bootcamps">
+            <h2>You are not enrolled in any bootcamps</h2>
+            <p>Visit our <a href="/bootcamps">bootcamps page</a> to explore and enroll in courses.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+.bootcamps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.bootcamp-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bootcamp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.bootcamp-card h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.bootcamp-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pagination-list {
+    display: flex;
+    list-style: none;
+}
+
+.page-item {
+    margin: 0 0.25rem;
+}
+
+.page-item.active .page-link {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.page-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    color: #3498db;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    background-color: #f8f9fa;
+    border-color: #aaa;
+}
+
+.no-bootcamps {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.no-bootcamps h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.no-bootcamps p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+</style>
+{% endblock %}

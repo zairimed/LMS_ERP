@@ -1,0 +1,51 @@
+{
+ "name": "Enrollment Lesson",
+ "doctype": "DocType",
+ "module": "LMS",
+ "istable": 1,
+ "custom": 0,
+ "fields": [
+  {
+   "label": "Lesson",
+   "fieldname": "lesson",
+   "fieldtype": "Link",
+   "options": "LMS Lesson",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "label": "Completion Date",
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "reqd": 1,
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Instructor",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Student",
+   "read": 1,
+   "write": 1
+  }
+ ]
+}

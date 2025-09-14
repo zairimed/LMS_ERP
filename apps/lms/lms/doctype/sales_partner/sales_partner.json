@@ -1,0 +1,47 @@
+{
+ "name": "Sales Partner",
+ "doctype": "DocType",
+ "module": "LMS",
+ "custom": 1,
+ "fields": [
+  {
+   "label": "User",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "options": "User",
+   "description": "Link to User for portal access"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Sales Partner",
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "role_permissions": [
+  {
+   "role": "Sales Partner",
+   "permissions": [
+    {
+      "read": 1,
+      "write": 1
+    }
+   ]
+  }
+ ]
+}

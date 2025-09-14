@@ -1,0 +1,49 @@
+{
+ "name": "Pricing Rule",
+ "doctype": "DocType",
+ "module": "LMS",
+ "custom": 1,
+ "fields": [
+  {
+   "label": "Sales Partner",
+   "fieldname": "sales_partner",
+   "fieldtype": "Link",
+   "options": "Sales Partner",
+   "description": "Link to Sales Partner for affiliate tracking"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Sales Partner",
+   "read": 1
+  }
+ ],
+ "index": [
+  {
+   "fieldname": "sales_partner",
+   "type": "index"
+  },
+  {
+   "fieldname": "valid_from",
+   "type": "index"
+  },
+  {
+   "fieldname": "valid_upto",
+   "type": "index"
+  }
+ ]
+}

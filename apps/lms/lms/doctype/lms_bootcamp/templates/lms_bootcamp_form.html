@@ -1,0 +1,61 @@
+{% extends "templates/docpage.html" %}
+
+{% block header %}
+<h1>{{ doc.title }}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="form-section">
+            <h3>Bootcamp Information</h3>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" value="{{ doc.title }}" readonly>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <div>{{ doc.description }}</div>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <h3>Linked ERPNext Item</h3>
+            <div class="form-group">
+                <label>Item Code</label>
+                <input type="text" class="form-control" value="{{ doc.item or 'Not created yet' }}" readonly>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <h3>Courses</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in doc.courses %}
+                    <tr>
+                        <td>{{ course.title }}</td>
+                        <td>{{ course.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="form-section">
+            <h3>Actions</h3>
+            <button class="btn btn-primary" onclick="frappe.set_route('Form', 'LMS Bootcamp', '{{ doc.name }}', 'edit')">Edit</button>
+            {% if doc.item %}
+            <button class="btn btn-secondary" onclick="frappe.set_route('Form', 'Item', '{{ doc.item }}')">View Linked Item</button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

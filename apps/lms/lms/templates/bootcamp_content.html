@@ -1,0 +1,250 @@
+<!-- Copyright (c) 2025, Your Company Name. All rights reserved. -->
+<!-- For license information, please see license.txt -->
+
+{% extends "templates/web.html" %}
+
+{% block title %}{{ bootcamp.title }}{% endblock %}
+
+{% block header %}
+<div class="container">
+    <h1>{{ bootcamp.title }}</h1>
+    <div class="breadcrumb">
+        <a href="/my-bootcamps">My Bootcamps</a> > 
+        <span>{{ bootcamp.title }}</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% if bootcamp.description %}
+            <div class="bootcamp-description">
+                {{ bootcamp.description }}
+            </div>
+            {% endif %}
+            
+            {% if courses %}
+                {% for course in courses %}
+                <div class="course-section">
+                    <h2>{{ course.title }}</h2>
+                    {% if course.description %}
+                    <p>{{ course.description }}</p>
+                    {% endif %}
+                    
+                    {% if course.lessons %}
+                    <div class="lessons-list">
+                        {% for lesson in course.lessons %}
+                        <div class="lesson-item {% if lesson.is_completed %}completed{% endif %}">
+                            <div class="lesson-info">
+                                <h3>
+                                    {% if lesson.is_completed %}
+                                    <span class="completion-icon" aria-hidden="true">✓</span>
+                                    <span class="sr-only">Completed:</span>
+                                    {% endif %}
+                                    {{ lesson.title }}
+                                </h3>
+                                <div class="lesson-meta">
+                                    <span class="content-type">{{ lesson.content_type }}</span>
+                                    <a href="/lesson/{{ lesson.name }}" class="btn btn-primary btn-sm">View Lesson</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <div class="sidebar">
+                <div class="progress-summary">
+                    <h3>Your Progress</h3>
+                    <div class="progress-text">Overall: {{ progress }}%</div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill" style="width: {{ progress }}%"></div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Completed:</span>
+                            <span class="stat-value">{{ completed_lessons }}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Lessons:</span>
+                            <span class="stat-value">{{ total_lessons }}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Remaining:</span>
+                            <span class="stat-value">{{ remaining_lessons }}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if next_lesson %}
+                <div class="next-lesson">
+                    <h3>Continue Learning</h3>
+                    <div class="lesson-info">
+                        <h4>{{ next_lesson.title }}</h4>
+                        <p>{{ next_lesson.description }}</p>
+                        <a href="/lesson/{{ next_lesson.name }}" class="btn btn-primary">Continue</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+.bootcamp-description {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #3498db;
+}
+
+.course-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.course-section:last-child {
+    border-bottom: none;
+}
+
+.lesson-item {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.lesson-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.lesson-item.completed {
+    background-color: #f8fff8;
+    border-color: #28a745;
+}
+
+.completion-icon {
+    color: #28a745;
+    margin-right: 0.5rem;
+}
+
+.lesson-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.content-type {
+    background-color: #e9ecef;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.sidebar {
+    position: sticky;
+    top: 2rem;
+}
+
+.progress-summary {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.stats {
+    margin-top: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-weight: 500;
+}
+
+.next-lesson {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.next-lesson .btn {
+    margin-top: 1rem;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #95a5a6;
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+    transition: width 0.3s ease;
+}
+
+.lesson-item:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+</style>
+{% endblock %}

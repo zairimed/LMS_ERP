@@ -1,0 +1,78 @@
+{
+ "name": "Enrollment",
+ "doctype": "DocType",
+ "module": "LMS",
+ "custom": 0,
+ "autoname": "format:ENR-{YYYY}-{MM}-{#####}",
+ "fields": [
+  {
+   "label": "User",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "label": "Bootcamp",
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "options": "LMS Bootcamp",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "label": "Enrollment Date",
+   "fieldname": "enrollment_date",
+   "fieldtype": "Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "label": "Completion Status",
+   "fieldname": "completion_status",
+   "fieldtype": "Select",
+   "options": "In Progress\nCompleted",
+   "default": "In Progress"
+  },
+  {
+   "label": "Completed Lessons",
+   "fieldname": "completed_lessons",
+   "fieldtype": "Table",
+   "options": "Enrollment Lesson"
+  },
+  {
+   "label": "Progress Percentage",
+   "fieldname": "progress_percentage",
+   "fieldtype": "Percent",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Instructor",
+   "read": 1,
+   "write": 1,
+    "create": 1
+  },
+  {
+   "role": "Student",
+   "read": 1,
+   "write": 1
+  }
+ ]
+}

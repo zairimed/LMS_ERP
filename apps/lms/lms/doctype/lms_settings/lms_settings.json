@@ -1,0 +1,39 @@
+{
+ "name": "LMS Settings",
+ "doctype": "DocType",
+ "module": "LMS",
+ "issingle": 1,
+ "custom": 0,
+ "fields": [
+  {
+   "label": "Default Item Group",
+   "fieldname": "default_item_group",
+   "fieldtype": "Link",
+   "options": "Item Group",
+   "description": "Default item group for newly created bootcamps"
+  },
+  {
+   "label": "Default Stock UOM",
+   "fieldname": "default_stock_uom",
+   "fieldtype": "Link",
+   "options": "UOM",
+   "description": "Default unit of measure for newly created bootcamps"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ]
+}
